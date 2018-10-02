@@ -53,22 +53,16 @@
     <input type="text" name="lastName">
 	<label>Sünniaasta: </label>
 	<label>Sünnikuu: </label>
-	<?php echo '<select name:"birthMonth">' ."n";
-	for ($i = 1; $i < 13; $i ++){
-		echo '<"option value_"' .$i .'"';
-		if ($i == $birthMonth){
-			echo " selected ";
-		}
-		echo ">" .$monthNamesET[$i - 1] ."</option> 
-	?>
+
 	<input type="number" min="1914" max="2000" value="1999" name="birthYear">
     <br>
     <input type="submit" name="submitUserData" value="Saada andmed">
   </form>
   <hr>
+  
   <?php
 		if (isset($_POST["firstName"])){
-		  echo "<p> .$fullName .", Olete elanud järgnevatel aastatel: </p> "\n";
+		  echo "<p>" .$fullName .", Olete elanud järgnevatel aastatel: </p> \n";
 		  echo "<ol> \n";
 		    for ($i = $_POST["birthYear"]; $i <= date("Y"); $i ++){
 			  echo "<li>" .$i ."</li> \n";	
@@ -76,6 +70,16 @@
 		  echo "</ol> \n"; 
 		}
   ?>
+  	<?php echo '<select name:"birthMonth">' ."n";
+	for ($i = 1; $i < 13; $i ++){
+		echo '<"option value_"' .$i .'"';
+		if ($i == $birthMonth){
+			echo " selected ";
+		}
+		echo ">" .$monthNamesET[$i - 1] ."</option> \n";
+	}
+	echo "</select> \n";
+		?>
 </body>
 </html>
 
