@@ -1,0 +1,1 @@
+UPDATE vpamsg SET acceptedb=?, accepted=?, acceptedtime=now() WHERE id=?

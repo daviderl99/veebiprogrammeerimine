@@ -64,7 +64,7 @@
 		$birthDate = date_format($birthDate, "Y-m-d");
 		//echo $birthDate;
 		} else {
-		  $birthDateError = "Palun valige võimalik kuupäev!";
+		  $birthDateError = "Kuupäev on vigane!";
 		}
 	}
 	
@@ -138,10 +138,10 @@
 	<br>
 	
 	<label>E-posti aadress (kasutajatunnuseks):</label><br>
-	<input name="email" type="email"><br><br>
+	<input name="email" type="email" value="<?php echo $email; ?>"><span><?php echo $emailError; ?></span><br><br>
 	
 	<label>Salasõna (min 8 märki):</label><br>
-	<input name="password" type="password">
+	<input name="password" type="password" value="<?php echo $password; ?>"><span><?php echo $passwordError; ?></span>
 	<br><br>
 
     <input type="submit" name="submitUserData" value="Loo kasutaja">
